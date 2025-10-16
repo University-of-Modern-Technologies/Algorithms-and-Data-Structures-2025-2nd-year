@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+Усі правила архітектури описані в @docs/arch_rules.md
+
+Усі бізнес-вимоги до сервісу описані в @docs/requirements.md
+
+Актуальний опис архітектури знаходиться в @docs/architecture.md
