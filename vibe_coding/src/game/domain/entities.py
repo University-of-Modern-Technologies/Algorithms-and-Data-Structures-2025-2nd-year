@@ -261,3 +261,4 @@ class Wave:
     def increase_speed(self, factor: float = 1.1) -> None:
         """Increase wave speed when enemies are destroyed."""
         self.velocity.vx *= factor
+

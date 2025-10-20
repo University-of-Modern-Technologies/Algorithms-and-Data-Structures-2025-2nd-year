@@ -146,3 +146,4 @@ class GameState:
             self.pause(current_time)
         elif self.state == GameStateEnum.PAUSED:
             self.resume()
+
