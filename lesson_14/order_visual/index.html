@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Візуалізація обходів дерева</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Візуалізація обходів двійкового дерева</h1>
+      <p>Інтерактивна демонстрація алгоритмів обходу дерева</p>
+    </header>
+
+    <main>
+      <section class="tree-container">
+        <svg id="treeSvg" width="800" height="400">
+          <!-- Дерево буде малюватися тут за допомогою JavaScript -->
+        </svg>
+      </section>
+
+      <section class="controls">
+        <div class="traversal-buttons">
+          <button id="preorderBtn" class="traversal-btn">Preorder (Прямий)</button>
+          <button id="inorderBtn" class="traversal-btn">Inorder (Симетричний)</button>
+          <button id="postorderBtn" class="traversal-btn">Postorder (Зворотний)</button>
+        </div>
+
+        <div class="control-buttons">
+          <button id="pauseBtn" class="control-btn" disabled>Пауза</button>
+          <button id="resetBtn" class="control-btn">Скинути</button>
+          <button id="stepBtn" class="control-btn">Крок</button>
+        </div>
+
+        <div class="speed-control">
+          <label for="speedSlider">Швидкість анімації:</label>
+          <input type="range" id="speedSlider" min="100" max="2000" value="800" step="100">
+          <span id="speedValue">800ms</span>
+        </div>
+      </section>
+
+      <section class="info-panel">
+        <div class="current-step">
+          <h3>Поточний крок:</h3>
+          <span id="currentNode">-</span>
+        </div>
+
+        <div class="traversal-order">
+          <h3>Порядок обходу:</h3>
+          <div id="orderDisplay" class="order-display"></div>
+        </div>
+
+        <div class="stack-info">
+          <h3>Стек викликів:</h3>
+          <div id="stackDisplay" class="stack-display"></div>
+        </div>
+
+        <div class="algorithm-info">
+          <h3>Інформація про алгоритм:</h3>
+          <p id="algorithmDescription"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

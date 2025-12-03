@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Візуалізатор Binary Search Tree</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🌳 Візуалізатор Binary Search Tree</h1>
+      <p>Інтерактивна демонстрація роботи двійкового дерева пошуку</p>
+    </header>
+
+    <main>
+      <section class="controls-section">
+        <div class="control-group">
+          <h3>🎯 Додавання вузлів</h3>
+          <div class="input-group">
+            <input type="number" id="nodeInput" placeholder="Введіть число" min="-999" max="999">
+            <button id="addBtn" class="btn-primary">➕ Додати</button>
+            <button id="randomBtn" class="btn-secondary">🎲 Випадкове</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>🔍 Пошук та видалення</h3>
+          <div class="input-group">
+            <input type="number" id="searchInput" placeholder="Пошук вузла" min="-999" max="999">
+            <button id="searchBtn" class="btn-info">🔍 Знайти</button>
+            <button id="deleteBtn" class="btn-danger">🗑️ Видалити</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>🛠️ Управління деревом</h3>
+          <div class="button-group">
+            <button id="clearBtn" class="btn-warning">🧹 Очистити</button>
+            <button id="balanceBtn" class="btn-secondary">⚖️ Балансувати</button>
+            <button id="exportBtn" class="btn-success">📸 Експорт</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>🎨 Налаштування</h3>
+          <div class="settings-group">
+            <label>
+              <input type="checkbox" id="animationToggle" checked>
+              Увімкнути анімації
+            </label>
+            <label>
+              <input type="checkbox" id="showValuesToggle" checked>
+              Показувати значення
+            </label>
+            <div class="speed-control">
+              <label for="speedSlider">Швидкість:</label>
+              <input type="range" id="speedSlider" min="100" max="2000" value="800" step="100">
+              <span id="speedValue">800ms</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tree-section">
+        <div class="tree-container">
+          <svg id="treeSvg" width="100%" height="500">
+            <!-- Дерево буде малюватися тут -->
+          </svg>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <div class="info-cards">
+          <div class="info-card">
+            <h3>📊 Статистика дерева</h3>
+            <div class="stats">
+              <div class="stat-item">
+                <span class="stat-label">Кількість вузлів:</span>
+                <span id="nodeCount" class="stat-value">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Висота дерева:</span>
+                <span id="treeHeight" class="stat-value">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Мінімальне значення:</span>
+                <span id="minValue" class="stat-value">-</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Максимальне значення:</span>
+                <span id="maxValue" class="stat-value">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>🔄 Обходи дерева</h3>
+            <div class="traversal-buttons">
+              <button id="inorderBtn" class="traversal-btn">Inorder</button>
+              <button id="preorderBtn" class="traversal-btn">Preorder</button>
+              <button id="postorderBtn" class="traversal-btn">Postorder</button>
+            </div>
+            <div class="traversal-result" id="traversalResult"></div>
+          </div>
+
+          <div class="info-card">
+            <h3>📝 Історія дій</h3>
+            <div class="history" id="history"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Binary Search Tree Visualizer © 2024 | Створено для навчання алгоритмів</p>
+    </footer>
+  </div>
+
+  <!-- Модальне вікно для детальної інформації -->
+  <div id="nodeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Інформація про вузол</h3>
+      <div id="nodeDetails"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
